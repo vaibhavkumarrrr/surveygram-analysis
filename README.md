@@ -1,25 +1,79 @@
-# SurveyGram
+# SurveyGram Report Generator
 
-Survey Gram is a survey platform developed to bridge the gap between companies seeking
-actionable consumer insights and individuals looking for opportunities to earn rewards by
-participating in surveys. The platform is designed to simplify the process of survey distribution
-and participation, making it easier for companies to reach their target audience and for users to
-discover and complete surveys that interest them. By offering incentives such as cash, coupons,
-and credits, Survey Gram encourages greater user engagement and ensures that businesses
-receive high-quality responses. This project was undertaken as a mini project for university
-coursework, aiming to create a practical solution that enhances the survey-taking experience
-for both companies and users
+## Overview
 
-## Technology
-python 3.8+
-library such as pandas, matplotlib, numpy
-modules such as transformers,onehotencoder
-
+SurveyGram is an automated data analysis and reporting tool designed to
+process survey datasets, generate visualizations, and perform predictive
+modeling. It generates detailed profiling reports and predictive
+analysis insights using linear regression, and exports results as a
+comprehensive PDF report.
 
 ## Features
 
-As we are working on the latest version of the analytical parts, it's evident that this segment is very trivial and demonstrates a linear regression and k-means clustering, likely to sample the initial project. As the versions committed to improve more advanced versions with utmost efficiency are yet to be pulled out,
+-   **Data Profiling**: Generates an extensive profiling report of the
+    dataset.
+-   **Visualization Generation**: Automatically creates scatter plots,
+    line plots, and pair plots.
+-   **Data Preprocessing**: Handles categorical encoding, feature
+    scaling, and train-test splitting.
+-   **Predictive Modeling**: Implements Linear Regression for price
+    prediction.
+-   **Evaluation Metrics**: Computes Mean Squared Error (MSE) and
+    R-squared (R²) scores.
+-   **PDF Report Generation**: Combines visualizations and results into
+    a structured PDF report.
 
-## Suggestions 
+## Dependencies
 
-suggestion and talk over is always welcomed, Feel free to connect
+Ensure you have the following Python packages installed:
+
+``` sh
+pip install pandas seaborn matplotlib ydata-profiling scikit-learn reportlab scipy pillow
+```
+
+## Usage
+
+### 1. Load Data
+
+Ensure your dataset (CSV format) is available. The script expects a
+dataset similar to `nissan-dataset.csv`.
+
+### 2. Run the Report Generator
+
+``` python
+import pandas as pd
+from surveygram import SurveyGramReport
+
+df = pd.read_csv('nissan-dataset.csv')
+report_generator = SurveyGramReport(df, image_folder='images', pdf_name='my_report.pdf')
+report_pdf = report_generator.generate_report()
+print(f"Report generated: {report_pdf}")
+```
+
+### 3. Output
+
+-   A profiling HTML report (`profiling_report.html`)
+-   A set of generated images (`images/` folder)
+-   A structured PDF report (`my_report.pdf`)
+
+## Methods Breakdown
+
+-   `profile_data()`: Generates an HTML profiling report.
+-   `create_visualizations()`: Produces scatter, line, and pair plots.
+-   `preprocess_data(test_size, random_state)`: Encodes and scales data
+    for modeling.
+-   `linear_regression(X_train, X_test, y_train, y_test)`: Trains and
+    evaluates a linear regression model.
+-   `evaluate_model(y_true, y_pred)`: Computes MSE and R² scores.
+-   `create_report_pdf(mse, r2)`: Consolidates results and images into a
+    PDF report.
+-   `generate_report()`: Calls all necessary methods to produce the
+    final output.
+
+## Output Example
+
+    Report generated: my_report.pdf
+
+## License
+
+This project is licensed under the MIT License.
