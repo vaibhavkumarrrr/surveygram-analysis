@@ -1,0 +1,9 @@
+<script>start("c:\\Users\\Vaibhav Kumar\\OneDrive\\Desktop\\eda\\final class\\images\\");</script>
+<script>onHasParentDirectory();</script>
+<script>addRow("linear_regression_plots","linear_regression_plots",1,0,"0 B",1738646101,"2/4/25, 10:45:01 AM");</script>
+<script>addRow("km_line.png","km_line.png",0,177698,"174 kB",1738646098,"2/4/25, 10:44:58 AM");</script>
+<script>addRow("km_scatter.png","km_scatter.png",0,116049,"113 kB",1738646097,"2/4/25, 10:44:57 AM");</script>
+<script>addRow("pairplot_kde.png","pairplot_kde.png",0,944848,"923 kB",1738646093,"2/4/25, 10:44:53 AM");</script>
+<script>addRow("pairplot.png","pairplot.png",0,1087604,"1.0 MB",1738646082,"2/4/25, 10:44:42 AM");</script>
+<script>addRow("performance_line.png","performance_line.png",0,158465,"155 kB",1738646100,"2/4/25, 10:45:00 AM");</script>
+<script>addRow("performance_scatter.png","performance_scatter.png",0,948350,"926 kB",1738646096,"2/4/25, 10:44:56 AM");</script>
